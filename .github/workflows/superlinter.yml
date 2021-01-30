@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-      - name: Run Linter
+      - uses: actions/setup-node@v1
+        name: 'Setup Node'
+        with:
+          node-version: '14.x'
+      - name: Install
         run: make install
-        run: make brain-games
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checking ES-Lint
+        run: make lint
