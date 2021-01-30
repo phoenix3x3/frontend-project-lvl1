@@ -9,7 +9,8 @@ jobs:
 
     steps:
       - name: Run Linter
-        run: npx eslint .
+        run: make install
+        run: make brain-games
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
