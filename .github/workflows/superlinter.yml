@@ -5,12 +5,9 @@ on: push
 
 jobs:
   check-lint:
-    name: Lint code base
     runs-on: ubuntu-18.04
 
     steps:
-      - name: Checkout Mode
-        uses: action/checkout@v2
       - name: Run Linter
         run: npx eslint .
         env:
