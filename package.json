@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/phoenix3x3/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/phoenix3x3/frontend-project-lvl1/actions)",
-  "main": "index.js",
+  "main": "/bin/brain-games.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/phoenix3x3/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/phoenix3x3/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/phoenix3x3/frontend-project-lvl1#readme",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
 }
