@@ -4,10 +4,14 @@ name: Super-Linter
 on: push
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  check-lint:
+    name: Lint code base
+    runs-on: ubuntu-18.04
+
     steps:
-      - name: Run Super-Linter
+      - name: Checkout Mode
+        uses: action/checkout@v2
+      - name: Run Linter
         run: make lint
         env:
           DEFAULT_BRANCH: main
