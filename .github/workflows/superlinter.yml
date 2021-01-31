@@ -1,22 +1,15 @@
-name: Check airbnb lint
+name: style-aribnb
 
-# Run this workflow every time a new commit pushed to your repository
 on: push
 
 jobs:
-  # Set the job key. The key is displayed as the job name
-  # when a job name is not provided
-  super-lint:
-    # Name the Job
+  check-style:
     name: Lint code base
-    # Set the type of machine to run on
     runs-on: ubuntu-18.04
 
     steps:
-      # Checks out a copy of your repository on the ubuntu-latest machine
       - name: Checkout code
         uses: actions/checkout@v2
-      # Runs the Super-Linter action
       - name: Npm install
         run: npm install
       - name: Run make lint
