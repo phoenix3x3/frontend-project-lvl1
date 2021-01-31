@@ -1,4 +1,4 @@
-name: Super-Linter
+name: Check airbnb lint
 
 # Run this workflow every time a new commit pushed to your repository
 on: push
@@ -20,7 +20,7 @@ jobs:
       - name: Npm install
         run: npm install
       - name: Run make lint
-        run: npx eslint bin/brain-games.js
+        run: make lint
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
