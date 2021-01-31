@@ -4,19 +4,22 @@ name: Super-Linter
 on: push
 
 jobs:
-  check-lint:
-    runs-on: ubuntu-18.04
+  # Set the job key. The key is displayed as the job name
+  # when a job name is not provided
+  super-lint:
+    # Name the Job
+    name: Lint code base
+    # Set the type of machine to run on
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/setup-node@v1
-        name: 'Setup Node'
-        with:
-          node-version: '14.x'
-      - name: Install packages
-        run: npm install
-      - name: Install make
-        run: sudo apt install make
-      - name: Test make
-        run: make install
-      - name: Checking ES-Lint
-        run: make lint
+      # Checks out a copy of your repository on the ubuntu-latest machine
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Runs the Super-Linter action
+      - name: Run Super-Linter
+        uses: github/super-linter@v3
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
