@@ -7,16 +7,19 @@ const gamesInterface = (func) => {
   const rule = func(stage);
   let expression;
   let count = 0;
-  while (stage < 3 && count < 3) {
+  while (count < 3) {
+    // Write some rules for game
     if (stage === 0) {
       console.log(rule);
       stage += 1;
     }
+    // Input data
     if (stage === 1) {
       expression = func(stage);
       console.log(`Question: ${expression}`);
       stage += 1;
     }
+    // Correct answer check function
     if (stage === 2) {
       const answer = readlineSync.question('Your answer: ');
       const correctAnswer = func(stage, expression);

@@ -31,10 +31,13 @@ const calc = (stage, expression) => {
   const rulesStr = 'What is the result of the expression?';
   switch (stage) {
     case 0:
+      // Write some rules for game
       return rulesStr;
     case 1:
+      // Input data
       return random();
     case 2:
+      // Correct answer check function
       return isAnswerCorrect(expression);
     default:
       break;
