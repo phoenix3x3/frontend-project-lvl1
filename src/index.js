@@ -3,17 +3,17 @@ import greeting from './cli.js';
 
 const gamesInterface = (func) => {
   let stage = 0;
+  let counter = 0;
+  let expression;
   const name = greeting();
   const rule = func(stage);
-  let expression;
-  let counter = 0;
+  // Write some rules for game
+  if (stage === 0) {
+    console.log(rule);
+    stage += 1;
+  }
   while (counter < 3) {
-    // Write some rules for game
-    if (stage === 0) {
-      console.log(rule);
-      stage += 1;
-    }
-    // Generate data
+    // Generate data for question
     if (stage === 1) {
       expression = func(stage);
       console.log(`Question: ${expression}`);
@@ -29,8 +29,8 @@ const gamesInterface = (func) => {
         return;
       }
       console.log('Correct!');
-      stage = 1;
       counter += 1;
+      stage = 1;
     }
   }
   console.log(`Congratulations, ${name}!`);
