@@ -1,13 +1,8 @@
-// const isAnswerCorrect = (expression) => eval(expression);
-const isAnswerCorrect = (expression) => {
-  const [num1, operator, num2] = expression.split(' ');
-  if (operator === '+') return +num1 + +num2;
-  if (operator === '-') return num1 - num2;
-  if (operator === '*') return num1 * num2;
-  return null;
-};
+import executeGame from '../executeGame.js';
 
-const random = () => {
+const getRules = () => 'What is the result of the expression?';
+
+const generateExpression = () => {
   const minInterval = Math.ceil(-100);
   const maxInterval = Math.floor(100);
   const minIntOperator = Math.ceil(0);
@@ -27,22 +22,15 @@ const random = () => {
   return null;
 };
 
-const calc = (stage, expression) => {
-  const rulesStr = 'What is the result of the expression?';
-  switch (stage) {
-    case 0:
-      // Write some rules for game
-      return rulesStr;
-    case 1:
-      // Input data
-      return random();
-    case 2:
-      // Correct answer check function
-      return isAnswerCorrect(expression);
-    default:
-      break;
-  }
+// const isAnswerCorrect = (expression) => eval(expression);
+const getCorrectAnswer = (expression) => {
+  const [num1, operator, num2] = expression.split(' ');
+  if (operator === '+') return +num1 + +num2;
+  if (operator === '-') return +num1 - +num2;
+  if (operator === '*') return +num1 * +num2;
   return null;
 };
 
-export default calc;
+export default (stage, expression) =>
+  // eslint-disable-next-line implicit-arrow-linebreak
+  executeGame(stage, expression, getRules, generateExpression, getCorrectAnswer);
