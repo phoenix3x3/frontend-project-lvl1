@@ -1,12 +1,12 @@
 export default (stage, expression, getRules, generateExpression, getCorrectAnswer) => {
   switch (stage) {
-    case 0:
+    case 1:
       // Write some rules for game
       return getRules();
-    case 1:
+    case 2:
       // Input data
       return generateExpression();
-    case 2:
+    case 3:
       // Get correct answer function
       return getCorrectAnswer(expression);
     default:
