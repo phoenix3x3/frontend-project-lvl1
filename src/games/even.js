@@ -1,4 +1,4 @@
-import executeGame from '../executeGame.js';
+import controller from '../controller.js';
 import random from '../randomInInterval.js';
 
 const getRules = () => 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -11,4 +11,4 @@ const getCorrectAnswer = (num) => (isNumEven(num) ? 'yes' : 'no');
 
 export default (stage, expression) =>
   // eslint-disable-next-line implicit-arrow-linebreak
-  executeGame(stage, expression, getRules, generateExpression, getCorrectAnswer);
+  controller(stage, expression, getRules, generateExpression, getCorrectAnswer);

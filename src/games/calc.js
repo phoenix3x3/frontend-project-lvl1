@@ -1,4 +1,4 @@
-import executeGame from '../executeGame.js';
+import controller from '../controller.js';
 import random from '../randomInInterval.js';
 
 const getRules = () => 'What is the result of the expression?';
@@ -27,4 +27,4 @@ const getCorrectAnswer = (expression) => {
 
 export default (stage, expression) =>
   // eslint-disable-next-line implicit-arrow-linebreak
-  executeGame(stage, expression, getRules, generateExpression, getCorrectAnswer);
+  controller(stage, expression, getRules, generateExpression, getCorrectAnswer);

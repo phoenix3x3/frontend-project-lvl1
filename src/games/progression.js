@@ -1,4 +1,4 @@
-import executeGame from '../executeGame.js';
+import controller from '../controller.js';
 import random from '../randomInInterval.js';
 
 const getRules = () => 'What number is missing in the progression?';
@@ -19,7 +19,7 @@ const generateExpression = () => {
 
 const getCorrectAnswer = (progression) => {
   const arr = progression.split(' ');
-  let d;
+  let diff;
   let hideNumIndex;
   for (let i = 0; i < arr.length; i += 1) {
     if (arr[i] === '..') {
@@ -28,14 +28,14 @@ const getCorrectAnswer = (progression) => {
     }
   }
   if (hideNumIndex < 2) {
-    d = +arr[4] - +arr[3];
+    diff = +arr[4] - +arr[3];
   } else {
-    d = +arr[1] - +arr[0];
+    diff = +arr[1] - +arr[0];
   }
 
-  return +arr[0] + d * hideNumIndex;
+  return +arr[0] + diff * hideNumIndex;
 };
 
 export default (stage, expression) =>
   // eslint-disable-next-line implicit-arrow-linebreak
-  executeGame(stage, expression, getRules, generateExpression, getCorrectAnswer);
+  controller(stage, expression, getRules, generateExpression, getCorrectAnswer);

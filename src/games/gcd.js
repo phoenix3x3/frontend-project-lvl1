@@ -1,12 +1,11 @@
-import executeGame from '../executeGame.js';
+import controller from '../controller.js';
+import random from '../randomInInterval.js';
 
 const getRules = () => 'Find the greatest common divisor of given numbers.';
 
 const generateExpression = () => {
-  const minInterval = Math.ceil(1);
-  const maxInterval = Math.floor(100);
-  const num1 = Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
-  const num2 = Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
+  const num1 = random(1, 100);
+  const num2 = random(1, 100);
   return `${num1} ${num2}`;
 };
 
@@ -23,4 +22,4 @@ const getCorrectAnswer = (expression) => {
 
 export default (stage, expression) =>
   // eslint-disable-next-line implicit-arrow-linebreak
-  executeGame(stage, expression, getRules, generateExpression, getCorrectAnswer);
+  controller(stage, expression, getRules, generateExpression, getCorrectAnswer);
