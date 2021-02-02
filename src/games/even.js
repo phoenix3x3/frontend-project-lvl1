@@ -1,12 +1,9 @@
 import executeGame from '../executeGame.js';
+import random from '../randomInInterval.js';
 
 const getRules = () => 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const generateExpression = () => {
-  const minInterval = Math.ceil(1);
-  const maxInterval = Math.floor(1000);
-  return Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
-};
+const generateExpression = () => random(1, 1000);
 
 const isNumEven = (num) => num % 2 === 0;
 
