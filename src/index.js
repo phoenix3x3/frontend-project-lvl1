@@ -1,10 +1,8 @@
 import readlineSync from 'readline-sync';
 import greeting from './cli.js';
+import { STAGE_ONE, STAGE_TWO, STAGE_THREE } from './constants/stages.js';
 
 const gamesInterface = (func) => {
-  const STAGE_ONE = 1;
-  const STAGE_TWO = 2;
-  const STAGE_THREE = 3;
   let stage = 1;
   let counter = 0;
   let expression;
@@ -33,7 +31,7 @@ const gamesInterface = (func) => {
       }
       console.log('Correct!');
       counter += 1;
-      stage = 2;
+      stage = STAGE_TWO;
     }
   }
   console.log(`Congratulations, ${name}!`);
