@@ -10,5 +10,4 @@ const isNumEven = (num) => num % 2 === 0;
 const getCorrectAnswer = (num) => (isNumEven(num) ? 'yes' : 'no');
 
 export default (stage, expression) =>
-  // eslint-disable-next-line implicit-arrow-linebreak
   controller(stage, expression, getRules, generateExpression, getCorrectAnswer);

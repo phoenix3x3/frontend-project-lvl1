@@ -37,5 +37,4 @@ const getCorrectAnswer = (progression) => {
 };
 
 export default (stage, expression) =>
-  // eslint-disable-next-line implicit-arrow-linebreak
   controller(stage, expression, getRules, generateExpression, getCorrectAnswer);

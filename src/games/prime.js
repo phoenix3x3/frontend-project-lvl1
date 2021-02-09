@@ -18,5 +18,4 @@ const isPrime = (num) => {
 const getCorrectAnswer = (expression) => (isPrime(expression) ? 'yes' : 'no');
 
 export default (stage, expression) =>
-  // eslint-disable-next-line implicit-arrow-linebreak
   controller(stage, expression, getRules, generateExpression, getCorrectAnswer);
