@@ -36,5 +36,6 @@ const getCorrectAnswer = (progression) => {
   return +arr[0] + diff * hideNumIndex;
 };
 
-export default (stage, expression) =>
-  controller(stage, expression, getRules, generateExpression, getCorrectAnswer);
+export default (stage, expression) => (
+  controller(stage, expression, getRules, generateExpression, getCorrectAnswer)
+);
