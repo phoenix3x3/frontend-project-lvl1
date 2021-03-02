@@ -25,6 +25,5 @@ const getCorrectAnswer = (expression) => {
   return null;
 };
 
-export default (stage, expression) => (
-  controller(stage, expression, getRules, generateExpression, getCorrectAnswer)
-);
+export default (stage, expression) =>
+  controller(stage, expression, getRules, generateExpression, getCorrectAnswer);

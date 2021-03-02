@@ -9,6 +9,5 @@ const isNumEven = (num) => num % 2 === 0;
 
 const getCorrectAnswer = (num) => (isNumEven(num) ? 'yes' : 'no');
 
-export default (stage, expression) => (
-  controller(stage, expression, getRules, generateExpression, getCorrectAnswer)
-);
+export default (stage, expression) =>
+  controller(stage, expression, getRules, generateExpression, getCorrectAnswer);

@@ -20,6 +20,5 @@ const getCorrectAnswer = (expression) => {
   return NOD(num1, num2);
 };
 
-export default (stage, expression) => (
-  controller(stage, expression, getRules, generateExpression, getCorrectAnswer)
-);
+export default (stage, expression) =>
+  controller(stage, expression, getRules, generateExpression, getCorrectAnswer);

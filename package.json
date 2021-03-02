@@ -26,12 +26,12 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "dependencies": {
-    "eslint-config-airbnb": "^18.2.1",
     "readline-sync": "1.4.10"
   },
   "devDependencies": {
     "eslint": "7.18.0",
     "eslint-config-airbnb-base": "14.2.1",
+    "eslint-config-prettier": "8.1.0",
     "eslint-plugin-import": "2.22.1",
     "prettier": "1.19.1"
   }

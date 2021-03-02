@@ -17,6 +17,5 @@ const isPrime = (num) => {
 
 const getCorrectAnswer = (expression) => (isPrime(expression) ? 'yes' : 'no');
 
-export default (stage, expression) => (
-  controller(stage, expression, getRules, generateExpression, getCorrectAnswer)
-);
+export default (stage, expression) =>
+  controller(stage, expression, getRules, generateExpression, getCorrectAnswer);
